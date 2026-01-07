@@ -577,7 +577,7 @@ function App() {
               className="flex items-center space-x-3 w-full px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 rounded-lg hover:bg-white hover:bg-opacity-10"
             >
               <Info className="w-4 h-4" />
-              <span className="font-medium">About Us</span>
+              <span className="font-medium">AboutUs</span>
               <span className="text-sm">ℹ️</span>
             </button>
             <button 

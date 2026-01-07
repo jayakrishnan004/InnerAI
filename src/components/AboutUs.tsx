@@ -136,31 +136,31 @@ const AboutUs: React.FC<AboutUsProps> = ({ isOpen, onClose }) => {
 
   const teamMembers = [
     {
-      name: 'Dr. Sarah Chen',
-      role: 'Clinical Psychologist & AI Ethics Lead',
-      bio: 'Specializes in digital therapeutics and ensures our AI responses meet clinical standards.',
-      avatar: '👩‍⚕️',
+      name: 'Ron Thomas Roy',
+      role: 'AI Developer',
+      bio: 'Specializes in backend development.',
+      avatar: '/images/team/ron-thomas-roy.jpg',
       expertise: ['Clinical Psychology', 'AI Ethics', 'Digital Health']
     },
     {
-      name: 'Alex Rodriguez',
+      name: 'Jayakrishnan K V',
       role: 'Lead AI Engineer',
-      bio: 'Expert in natural language processing and machine learning for mental health applications.',
-      avatar: '👨‍💻',
+      bio: 'Expert in natural language processing and machine learning.',
+      avatar: '/images/team/jayakrishnan-kv.jpg',
       expertise: ['Machine Learning', 'NLP', 'AI Safety']
     },
     {
-      name: 'Maya Patel',
-      role: 'UX Designer & Mental Health Advocate',
+      name: 'Jeswin Cheriyan Priji',
+      role: 'UX/UI Designer',
       bio: 'Designs compassionate user experiences that prioritize accessibility and emotional safety.',
-      avatar: '👩‍🎨',
+      avatar: '/images/team/jeswin-cheriyan-priji.jpg',
       expertise: ['UX Design', 'Accessibility', 'Mental Health Advocacy']
     },
     {
-      name: 'Dr. James Wilson',
-      role: 'Psychiatrist & Medical Advisor',
-      bio: 'Provides medical oversight and ensures our platform supports professional mental health care.',
-      avatar: '👨‍⚕️',
+      name: 'Sebin K Thomas',
+      role: 'AI Developer',
+      bio: 'focussing on software integrations',
+      avatar: '/images/team/sebin-k-thomas.jpg',
       expertise: ['Psychiatry', 'Digital Medicine', 'Crisis Intervention']
     }
   ];
@@ -318,7 +318,17 @@ const AboutUs: React.FC<AboutUsProps> = ({ isOpen, onClose }) => {
                 {teamMembers.map((member, index) => (
                   <div key={index} className="team-card">
                     <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-200 text-center hover:shadow-lg transition-all duration-300">
-                      <div className="text-6xl mb-4">{member.avatar}</div>
+                      <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-200 shadow-lg">
+                        <img 
+                          src={member.avatar} 
+                          alt={`${member.name} - ${member.role}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to a placeholder if image fails to load
+                            e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik01MCAyNUMzNS44MTYgMjUgMjUgMzUuODE2IDI1IDUwQzI1IDY0LjE4NCAzNS44MTYgNzUgNTAgNzVDNjQuMTg0IDc1IDc1IDY0LjE4NCA3NSA1MEM3NSAzNS44MTYgNjQuMTg0IDI1IDUwIDI1Wk01MCA2NkM0MC4wNTkgNjYgMzIgNTcuOTQxIDMyIDQ4QzMyIDM4LjA1OSA0MC4wNTkgMzAgNTAgMzBDNTkuOTQxIDMwIDY4IDM4LjA1OSA2OCA0OEM2OCA1Ny45NDEgNTkuOTQxIDY2IDUwIDY2WiIgZmlsbD0iIzk0QTNBRiIvPgo8L3N2Zz4K';
+                          }}
+                        />
+                      </div>
                       <h3 className="text-lg font-bold text-neutral-800 mb-2">{member.name}</h3>
                       <p className="text-sm font-medium text-purple-600 mb-3">{member.role}</p>
                       <p className="text-sm text-neutral-600 mb-4 leading-relaxed">{member.bio}</p>
